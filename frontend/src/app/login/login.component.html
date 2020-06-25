@@ -1,4 +1,6 @@
-<small *ngIf='invalidLogin'>{{ errorMessage }}</small>
+<div class="alert alert-danger" *ngIf="showInvalidLoginErrorMessage">
+    <span>{{ invalidLoginErrorMessage }}</span>
+</div>
 <div>
     <label for="username">User Name:</label>
     <input type="text" name="username" [(ngModel)]="username">
@@ -6,5 +8,5 @@
     <label for="password">Password:</label>
     <input type="password" name="password" [(ngModel)]="password">
 
-    <button type="submit" (click)=handleLogin()>Login</button>
+    <button class="btn btn-success" type="submit" (click)=handleLogin()>Login</button>
 </div>
