@@ -1,3 +1,4 @@
+import { TodoDataService } from './../service/data/todo-data.service';
 import { Component, OnInit } from '@angular/core';
 import { range } from 'rxjs';
 
@@ -20,19 +21,16 @@ export class Todo {
 })
 export class ListTodosComponent implements OnInit {
 
-  todos = this.generateTodos();
+  todos = [];
 
-  constructor() { }
+  constructor(
+    private todoService: TodoDataService
+  ) { }
 
   ngOnInit(): void {
-  }
-
-  private generateTodos(): any[] {
-    const todos = Array<Todo>();
-    for (let i = 1; i <= 5; i++) {
-      todos.push(new Todo(i, `Todo #${i}`, new Date(), false));
-    }
-    return todos;
+    this.todoService.getAllTodos('test').subscribe(
+      response => this.todos = response
+    );
   }
 
 }
