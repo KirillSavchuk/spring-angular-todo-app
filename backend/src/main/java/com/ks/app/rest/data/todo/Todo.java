@@ -1,4 +1,4 @@
-package com.ks.app.todo.entity;
+package com.ks.app.rest.data.todo;
 
 import lombok.*;
 

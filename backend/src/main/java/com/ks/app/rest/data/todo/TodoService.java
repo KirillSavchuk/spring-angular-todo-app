@@ -1,6 +1,5 @@
-package com.ks.app.todo.service;
+package com.ks.app.rest.data.todo;
 
-import com.ks.app.todo.entity.Todo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

@@ -1,8 +1,5 @@
-package com.ks.app.todo.controller;
+package com.ks.app.rest.data.todo;
 
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.ks.app.todo.entity.Todo;
-import com.ks.app.todo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

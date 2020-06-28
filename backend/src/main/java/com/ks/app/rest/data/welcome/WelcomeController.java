@@ -1,6 +1,5 @@
-package com.ks.app.todo.controller;
+package com.ks.app.rest.data.welcome;
 
-import com.ks.app.todo.entity.WelcomeResponseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
