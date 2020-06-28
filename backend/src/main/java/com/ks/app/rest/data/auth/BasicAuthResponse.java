@@ -1,4 +1,4 @@
-package com.ks.app.rest.data.welcome;
+package com.ks.app.rest.data.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class WelcomeResponseEntity {
+public class BasicAuthResponse {
 
     private String message;
 

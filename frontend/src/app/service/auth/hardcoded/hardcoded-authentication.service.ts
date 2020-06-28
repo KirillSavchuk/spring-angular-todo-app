@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class HardcodedAuthenticationService {
 
-  constructor() { }
-
   public authenticate(username: string, password: string): boolean {
     const isUserAuthenticated = this.isPasswrodCorrect(username, password);
     if (isUserAuthenticated) {
@@ -15,13 +13,13 @@ export class HardcodedAuthenticationService {
     return isUserAuthenticated;
   }
 
+  public isPasswrodCorrect(username: string, password: string): boolean {
+    return username === 'test' && password === 'test';
+  }
+
   public isUserLoggedIn(): boolean {
     const user = sessionStorage.getItem('authenticatedUser');
     return (user !== null);
-  }
-
-  private isPasswrodCorrect(username: string, password: string): boolean {
-    return username === 'test' && password === 'test';
   }
 
   public logout(): void {

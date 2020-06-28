@@ -17,11 +17,11 @@ public class WelcomeController {
     }
 
     @GetMapping(path = "/welcome/{name}")
-    public ResponseEntity<WelcomeResponseEntity> welcome(@PathVariable String name){
+    public ResponseEntity<WelcomeResponse> welcome(@PathVariable String name){
         if (name.equals("error")) throw new Error("Test Error!");
 
         String message = String.format("Welcome, %s!", name);
-        WelcomeResponseEntity entity = new WelcomeResponseEntity(message);
+        WelcomeResponse entity = new WelcomeResponse(message);
         return new ResponseEntity<>(entity, HttpStatus.OK);
     }
 
