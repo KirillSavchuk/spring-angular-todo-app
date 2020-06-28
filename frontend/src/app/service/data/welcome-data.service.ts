@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export class WelcomeResponseEntity {
@@ -18,7 +18,20 @@ export class WelcomeDataService {
   ) { }
 
   executeWelcomeService(name: string): Observable<WelcomeResponseEntity> {
-    return this.httpClient.get<WelcomeResponseEntity>(`http://localhost:8080/welcome/${name}`);
+    const header = new HttpHeaders({
+      Authorization: this.createBasicAuthHeaderValue()
+    });
+
+    return this.httpClient.get<WelcomeResponseEntity>(
+      `http://localhost:8080/welcome/${name}`,
+      {headers: header}
+    );
+  }
+
+  private createBasicAuthHeaderValue(): string {
+    const username = 'test';
+    const password = 'test';
+    return 'Basic' + window.btoa(`${username}:${password}`);
   }
 
 }

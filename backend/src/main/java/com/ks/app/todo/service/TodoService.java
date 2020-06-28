@@ -11,10 +11,10 @@ import java.util.List;
 public class TodoService {
 
     private static List<Todo> todos = new ArrayList<>();
-    private static int idCounter = 0;
+    private static int idCounter = 1;
 
     static {
-        for (; idCounter <= 15; idCounter++) {
+        for (; idCounter <= 3; idCounter++) {
             todos.add(new Todo(idCounter, "test", "Todo #" + idCounter, new Date(), false));
         }
     }
@@ -33,7 +33,7 @@ public class TodoService {
     }
 
     public Todo save(Todo todo){
-        if (todo.getId() == -1) {
+        if (todo.getId() == 0) {
             todo.setId(++idCounter);
         } else {
             deleteById(todo.getId());
