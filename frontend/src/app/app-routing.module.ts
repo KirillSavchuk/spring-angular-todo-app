@@ -1,3 +1,4 @@
+import { TodoComponent } from './todo/todo.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService] },
   { path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGuardService] },
   { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService] },
+  { path: 'todos/:id', component: TodoComponent, canActivate: [RouteGuardService] },
   { path: '**', component: ErrorComponent}
 ];
 

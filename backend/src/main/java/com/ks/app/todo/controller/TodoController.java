@@ -27,6 +27,24 @@ public class TodoController {
         return new ResponseEntity<List<Todo>>(todoService.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/users/{username}/todos/{id}")
+    public ResponseEntity<Todo> getTodo(@PathVariable String username, @PathVariable long id) {
+        return new ResponseEntity<Todo>(todoService.findById(id), HttpStatus.OK);
+    }
+
+    @PostMapping("/users/{username}/todos/{id}")
+    public ResponseEntity<Todo> createTodo(@PathVariable String username, @PathVariable long id, @RequestBody Todo todo){
+        Todo createTodo = todoService.save(todo);
+        return new ResponseEntity<>(createTodo, HttpStatus.OK);
+    }
+
+    @PutMapping("/users/{username}/todos/{id}")
+    public ResponseEntity<Todo> updateTodo(@PathVariable String username, @PathVariable long id, @RequestBody Todo todo){
+        Todo updatedTodo = todoService.save(todo);
+        return new ResponseEntity<>(updatedTodo, HttpStatus.OK);
+    }
+
+
     @DeleteMapping("/users/{username}/todos/{id}")
     public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id) {
         Todo todo = todoService.deleteById(id);

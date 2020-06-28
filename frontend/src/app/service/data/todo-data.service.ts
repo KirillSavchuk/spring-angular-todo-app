@@ -12,7 +12,20 @@ export class TodoDataService {
     private httpClient: HttpClient
   ) { }
 
-  getAllTodos(username: string): Observable<Todo[]> {
+  public getAllTodos(username: string): Observable<Todo[]> {
     return this.httpClient.get<Todo[]>(`http://localhost:8080/users/${username}/todos`);
   }
+
+  public getTodo(username: string, id: number): Observable<Todo> {
+    return this.httpClient.get<Todo>(`http://localhost:8080/users/${username}/todos/${id}`);
+  }
+
+  public updateTodo(username: string, id: number, todo: Todo): Observable<Todo>  {
+    return this.httpClient.post<Todo>(`http://localhost:8080/users/${username}/todos/${id}`, null);
+  }
+
+  public deleteTodo(username: string, id: number): Observable<Todo>  {
+    return this.httpClient.delete<Todo>(`http://localhost:8080/users/${username}/todos/${id}`);
+  }
+
 }
