@@ -2,21 +2,25 @@ package com.ks.app.rest.data.todo;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
+
+@Entity
 @Getter
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
 public class Todo {
 
-    @EqualsAndHashCode.Include
-    private long id;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-    @EqualsAndHashCode.Include
     private String username;
-
     private String description;
     private Date targetDate;
     private boolean isDone;

@@ -10,7 +10,7 @@ import java.util.List;
 public class TodoService {
 
     private static List<Todo> todos = new ArrayList<>();
-    private static int idCounter = 1;
+    private static long idCounter = 1;
 
     static {
         for (; idCounter <= 3; idCounter++) {
