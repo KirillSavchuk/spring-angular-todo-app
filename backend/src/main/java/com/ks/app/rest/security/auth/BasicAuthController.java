@@ -1,4 +1,4 @@
-package com.ks.app.rest.data.auth;
+package com.ks.app.rest.security.auth;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

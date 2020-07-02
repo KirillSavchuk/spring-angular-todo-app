@@ -1,4 +1,4 @@
-package com.ks.app.rest.data.auth;
+package com.ks.app.rest.security.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
